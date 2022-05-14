@@ -149,7 +149,7 @@ a {
   bottom: 0;
   width: 60px;
   height: 60px;
-  background: url("../../img/dino.png") no-repeat top center/cover;
+  background: url("./img/dino.png") no-repeat top center/cover;
 }
 
 #cactus {
@@ -158,7 +158,7 @@ a {
   bottom: 0;
   width: 20px;
   height: 40px;
-  background: url("../../img/cactus.png") no-repeat top center/cover;
+  background: url("./img/cactus.png") no-repeat top center/cover;
 }
 
 .drive {
