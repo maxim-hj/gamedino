@@ -122,6 +122,50 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./src/js/components/ex.js":
+/*!*********************************!*\
+  !*** ./src/js/components/ex.js ***!
+  \*********************************/
+/***/ (() => {
+
+var dino = document.getElementById("dino");
+var cactus = document.getElementById("cactus");
+window.addEventListener("keydown", function () {
+  playGame();
+});
+window.addEventListener("touchstart", function (event) {
+  if (event.targetTouches.length == 1) {
+    var myclick = event.targetTouches[0];
+    playGame();
+  }
+}, false);
+
+var playGame = function playGame() {
+  if (dino.classList != "jump") {
+    dino.classList.add("jump");
+  }
+
+  if (cactus.classList != "drive") {
+    cactus.classList.add("drive");
+  }
+
+  setTimeout(function () {
+    dino.classList.remove("jump");
+  }, 300);
+};
+
+var stopGame = setInterval(function () {
+  var dinoTop = parseInt(window.getComputedStyle(dino).getPropertyValue("bottom"));
+  var cactusRight = parseInt(window.getComputedStyle(cactus).getPropertyValue("right"));
+
+  if (cactusRight > 723 && cactusRight < 789 && dinoTop <= 20) {
+    cactus.classList.remove("drive");
+    alert("GAME OVER!!");
+  }
+});
+
+/***/ }),
+
 /***/ "./src/js/functions/mobile-check.js":
 /*!******************************************!*\
   !*** ./src/js/functions/mobile-check.js ***!
@@ -546,8 +590,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _functions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./_functions */ "./src/js/_functions.js");
 /* harmony import */ var _components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./_components */ "./src/js/_components.js");
 /* harmony import */ var _components__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_components__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _components_ex__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/ex */ "./src/js/components/ex.js");
+/* harmony import */ var _components_ex__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_components_ex__WEBPACK_IMPORTED_MODULE_4__);
 
 
+
+ //
 
 
 })();
